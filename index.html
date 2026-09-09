@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload File</title>
+
+<meta name="description" content="Static HTML, JavaScript and JSON test site">
+<style>
+* { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 30px 15px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  p.subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  .message {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .message.success {
+    background: #14532d;
+    color: #bbf7d0;
+    border: 1px solid #16a34a;
+  }
+  .message.error {
+    background: #450a0a;
+    color: #fecaca;
+    border: 1px solid #dc2626;
+  }
+  .upload-box {
+    background: #1e293b;
+    border: 1px dashed #334155;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  input[type="file"] {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+  }
+  button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  button:hover {
+    background: #1d4ed8;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+  }
+  th {
+    background: #111827;
+    color: #93c5fd;
+  }
+  .empty {
+    text-align: center;
+    color: #64748b;
+    padding: 25px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #16a34a;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 5px;
+  }
+  .btn:hover {
+    background: #15803d;
+  }
+  .btn-danger {
+    background: #dc2626;
+  }
+  .btn-danger:hover {
+    background: #b91c1c;
+  }
+  .info {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload File</h1>
+    <p class="subtitle">File yang diupload dapat didownload oleh semua orang</p>
+
+    
+      <div class="message "></div>
+    
+
+    <div class="upload-box">
+      <form action="javascript:void(0)" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <button type="submit">Upload File</button>
+      </form>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama File</th>
+          <th>Ukuran</th>
+          <th>Tanggal Upload</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr><td colspan="4" class="empty">Belum ada file yang diupload</td></tr>
+        
+          
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <a class="btn" href="download.php?file=">Download</a>
+                <a class="btn btn-danger" href="delete.php?file=" onclick="return confirm('Hapus file ini?')">Hapus</a>
+              </td>
+            </tr>
+          
+        
+      </tbody>
+    </table>
+
+    <p class="info">Batas ukuran file:  MB per file</p>
+  </div>
+
+<section id="staticFiles" aria-live="polite"></section>
+<script src="script.js"></script>
+</body>
+</html>
